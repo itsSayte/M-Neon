@@ -1,15 +1,15 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Gestionnaire Minecraft</title>
-</head>
-<body>
-    <h1>Mes serveurs Minecraft</h1>
+<h1>Serveur Survie</h1>
 
-    <p>Survie</p>
+{% if running %}
+    <p>Statut : en ligne</p>
 
-    <button>Démarrer</button>
-    <button>Arrêter</button>
-</body>
-</html>
+    <form method="post" action="/server/stop">
+        <button type="submit">Arrêter</button>
+    </form>
+{% else %}
+    <p>Statut : arrêté</p>
+
+    <form method="post" action="/server/start">
+        <button type="submit">Démarrer</button>
+    </form>
+{% endif %}

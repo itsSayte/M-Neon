@@ -1,1 +1,3 @@
 .venv
+minecraft-servers/*
+__pycache__
