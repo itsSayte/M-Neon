@@ -8,8 +8,8 @@
 
 M-Neon is a study project designed to simplify the management of Minecraft servers through a modern and intuitive interface.
 
-https://img.shields.io/badge/docker-ready-blue
-https://img.shields.io/badge/status-development-orange
+![](https://img.shields.io/badge/docker-ready-blue)
+![](https://img.shields.io/badge/status-development-orange)
 
 </div>
 
