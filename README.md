@@ -1,6 +1,6 @@
 <div align="center">
 
-![icon](https://github.com/itsSayte/M-Neon/blob/Dev/assets/icon.png)
+<img src="https://github.com/itsSayte/M-Neon/blob/Dev/assets/icon.png" alt="image" style="width:30%; height:auto;">
 
 # M-Neon
 
