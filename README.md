@@ -1,6 +1,5 @@
 <div align="center">
-
-./assets/icon.png
+![icon](https://github.com/itsSayte/M-Neon/blob/Dev/assets/icon.png)
 
 # M-Neon
 
