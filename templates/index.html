@@ -1,15 +1,121 @@
-<h1>Serveur Survie</h1>
+<!DOCTYPE html>
+<html lang="fr">
 
-{% if running %}
-    <p>Statut : en ligne</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M-Neon</title>
 
-    <form method="post" action="/server/stop">
-        <button type="submit">Arrêter</button>
-    </form>
-{% else %}
-    <p>Statut : arrêté</p>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 
-    <form method="post" action="/server/start">
-        <button type="submit">Démarrer</button>
-    </form>
-{% endif %}
+<body>
+
+    <div class="sidebar">
+
+        <div class="logo">
+            🚀 M-Neon
+        </div>
+
+        <div id="tree" class="tree"></div>
+
+        <div class="section-title">
+            Nouvelle catégorie
+        </div>
+
+        <input id="categoryName" placeholder="Nom de la catégorie">
+
+        <button onclick="createCategory()">
+            Ajouter catégorie
+        </button>
+
+        <hr>
+
+        <button class="create-btn" onclick="openModal()">
+            + Nouveau serveur
+        </button>
+
+    </div>
+
+    <div class="main">
+
+        <div class="hero">
+            <h1>Bienvenue sur M-Neon</h1>
+            <p>
+                Gérez facilement vos serveurs Minecraft.
+            </p>
+        </div>
+
+        <div class="stats">
+
+            <div class="card">
+                <h3>Catégories</h3>
+                <span id="catCount">0</span>
+            </div>
+
+            <div class="card">
+                <h3>Serveurs</h3>
+                <span id="serverCount">0</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Modal création serveur -->
+
+    <div id="serverModal" class="modal">
+
+        <div class="modal-content">
+
+            <h2>Créer un serveur Minecraft</h2>
+
+            <input
+                id="modalServerName"
+                placeholder="Nom du serveur">
+
+            <select id="modalServerCategory">
+            </select>
+
+            <select id="serverType">
+                <option value="Paper">Paper</option>
+                <option value="Purpur">Purpur</option>
+                <option value="Spigot">Spigot</option>
+                <option value="Fabric">Fabric</option>
+                <option value="Forge">Forge</option>
+                <option value="Vanilla">Vanilla</option>
+            </select>
+
+            <input
+                id="serverVersion"
+                placeholder="Version (1.21.1)">
+
+            <input
+                id="ramMin"
+                placeholder="RAM Min (2G)">
+
+            <input
+                id="ramMax"
+                placeholder="RAM Max (4G)">
+
+            <div class="modal-buttons">
+
+                <button onclick="createServer()">
+                    Créer
+                </button>
+
+                <button onclick="closeModal()">
+                    Annuler
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
